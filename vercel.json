@@ -3,7 +3,7 @@
   "installCommand": "npm install",
   "builds": [
     {
-      "src": "dist/assets/**",
+      "src": "dist/public/assets/**",
       "use": "@vercel/static"
     },
     {
@@ -17,7 +17,7 @@
   "rewrites": [
     {
       "source": "/assets/(.*)",
-      "destination": "dist/assets/$1"
+      "destination": "dist/public/assets/$1"
     },
     {
       "source": "/(.*)",

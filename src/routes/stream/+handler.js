@@ -32,7 +32,7 @@ export const GET = (context) => {
       // Send initial message
       sendMessage();
 
-      // Send a message every 2 seconds
+      // Send a message every 1 seconds
       interval = setInterval(() => {
         try {
           sendMessage();
@@ -45,9 +45,9 @@ export const GET = (context) => {
             // Already closed
           }
         }
-      }, 2000);
+      }, 1000);
 
-      // Optional: Stop after 30 seconds to prevent infinite streams
+      // Optional: Stop after 3 seconds to prevent infinite streams
       const timeout = setTimeout(() => {
         clearInterval(interval);
         try {
@@ -60,7 +60,7 @@ export const GET = (context) => {
         } catch (error) {
           // Stream already closed
         }
-      }, 30000);
+      }, 3000);
     },
   });
 

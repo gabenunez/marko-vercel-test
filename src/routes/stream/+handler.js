@@ -60,7 +60,7 @@ export const GET = (context) => {
         } catch (error) {
           // Stream already closed
         }
-      }, 3000);
+      }, 4000);
     },
   });
 

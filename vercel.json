@@ -1,0 +1,27 @@
+{
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "builds": [
+    {
+      "src": "dist/assets/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "dist/index.mjs",
+      "use": "@vercel/node",
+      "config": {
+        "supportsResponseStreaming": true
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/assets/(.*)",
+      "destination": "dist/assets/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "dist/index.mjs"
+    }
+  ]
+}

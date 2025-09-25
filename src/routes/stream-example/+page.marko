@@ -1,0 +1,24 @@
+import { getItems } from "../../lib/getItems";
+<div class="container">
+    <try>
+
+        <@placeholder>Loading...</@placeholder>
+
+        <@catch|err|>
+            Could not load posts
+        </@catch>
+
+        <await|posts|=getItems()>
+            <h1>Stream Example</h1>
+            <p>This page demonstrates streaming content with Marko.</p>
+            <a href="/">
+                Go back to Home
+            </a>
+            <ul>
+                <for|post| of=posts>
+                    <li>${post.title}</li>
+                </for>
+            </ul>
+        </await>
+    </try>
+</div>
